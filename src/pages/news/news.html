@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      News
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+ <!-- <ion-content padding>
+  <ion-card *ngFor="let x of elem" >
+    <ion-list>
+    <img *ngIf="x.promo_images.url" src="{{x.promo_images.url}}"/>
+      <ion-card-content>
+        <ion-card-title>
+            {{x.title}}
+        </ion-card-title>
+         <ion-list>
+           <ion-item-sliding *ng-for="#item of elem">
+            <ion-item>
+              <ion-icon name="person"></ion-icon>
+              Author
+              <ion-note>
+                {{x.credits[0].name}}
+              </ion-note>
+            </ion-item>
+            <ion-item-options side="left">
+              <button ion-button>
+                <ion-icon name="book"></ion-icon>  
+              </button>
+              <button color="secondary" ion-button>
+                <ion-icon name="person"></ion-icon>  
+              </button>
+              <button color="danger" ion-button (click)="delete(item)">
+                <ion-icon name="close"></ion-icon>  
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>  -->
+        <!-- <a ion-button block target="_target" href="{{x.canonical_url}}">Read full article</a> -->
+         <!-- <button ion-button (click)="viewItem(x)">View</button>
+      </ion-card-content>
+    </ion-list>
+  </ion-card>
+</ion-content>    -->
+
+ <ion-content padding>
+  <ion-list>
+     <ion-item *ngFor="let x of elem"> 
+    <ion-item-sliding>
+      <ion-item >
+      
+           <!-- <ion-thumbnail item-left > 
+           <img src = "x.promo_images[0].url">   
+           <! <img src="https://s3-us-west-1.amazonaws.com/annenberg-media/wp-content/uploads/2017/07/Screen-Shot-2017-07-18-at-1.50.33-PM.png">  -->
+           <!-- </ion-thumbnail>     --> 
+
+        <h2 text-wrap>{{x.title}}</h2>
+        <br>
+        <div>
+        <ion-icon name="person"></ion-icon>
+               Author
+              <ion-note item-right>
+                {{x.credits[0].name}}
+              </ion-note>
+        </div>      
+            <br>
+         <button ion-button full (click)="viewItem(x)">View</button>
+      </ion-item>   
+      <ion-item-options side="left">
+              <button ion-button>
+                <ion-icon name="book"></ion-icon>  
+              </button>
+              <button color="secondary" ion-button>
+                <ion-icon name="person"></ion-icon>  
+              </button>
+              <button color="danger" ion-button (click)="delete(x)">
+                <ion-icon name="close"></ion-icon>  
+              </button>
+      </ion-item-options>
+    
+    </ion-item-sliding>
+    </ion-item>            
+  </ion-list>
+</ion-content>   
