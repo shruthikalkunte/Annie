@@ -7,30 +7,12 @@
 </ion-header>
 
 <ion-content padding>
-  <!-- <ion-card>
-    <img src="{{x.promo_images[0].url}}"/>
-      <ion-card-content>
-        <ion-card-title>
-            {{x.title}}
-        </ion-card-title>
-         <ion-list>
-          <ion-item>
-            
-          </ion-item>
-        </ion-list> 
-        <a ion-button block target="_target" href="{{x.canonical_url}}">Read full article</a>
-        </ion-card-content>
-  </ion-card> -->
-        <!-- <ion-item text-wrap *ngFor = "let i of x.content_elements"> -->
-          <!-- <div *ngIf="i.content != null"> -->
-            <h2>{{x.title}}</h2>
+            <h2 [innerHTML]="x.title"></h2>
             <h5>{{x.credits[0].name}}</h5>
             <img *ngIf="x.promo_images[0].url" src="{{x.promo_images[0].url}}"/>
             <div text-justify *ngFor = "let i of x.content_elements">
-              <p style="font-weight: bold"> {{i.caption}}</p>
+              <div [innerHTML]= "i.caption"></div>
               <img *ngIf="i.url" src="{{i.url}}"/>
-              {{i.content}}
+              <div [innerHTML]= "i.content"></div>
             </div>
-          <!-- </div> -->
-        <!-- </ion-item> -->
 </ion-content>
