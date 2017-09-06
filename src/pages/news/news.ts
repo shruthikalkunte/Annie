@@ -16,34 +16,16 @@ export class NewsPage {
   a:any;
   
   constructor(public navCtrl: NavController, private newsService:NewsService) {
-        
+	  		
+	this.getPosts();
+	          
   }
 
-  ngOnInit(){
-      this.getPosts(10);
-  }
-
-      getPosts(limit){
-          this.newsService.getPosts(limit).subscribe(response => {
-             this.elem = response.items;
-             this.temp=response.items[0].promo_images[0].url;
-             this.data=[this.elem];            
+      getPosts(){
+          this.newsService.getPosts().subscribe(response => {
+             this.elem = response;
+             // this.temp=response.items[0].promo_images[0].url;
+             // this.data=[this.elem];            
       });
 }
-       
-  viewItem(x){
-    this.navCtrl.push(DetailsPage, {
-      x:x
-    });
-  }  
-  
-  delete(x){
-    if(x !== null && x!== undefined){
-      let index = this.data[0].indexOf(x);
-        if (index !== -1) {
-          this.data[0].splice(index, 1);
-    } 
-  }
-  }
-}  
-
+}

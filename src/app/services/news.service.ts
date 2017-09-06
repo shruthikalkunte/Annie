@@ -16,8 +16,8 @@ export class NewsService{
         this.baseUrl = "http://www.uscannenbergmedia.com/arcio/ans/";
     }
 
-    getPosts(limit){
-        return this.http.get(this.baseUrl+'?limit='+limit)
+    getPosts(){
+        return this.http.get(this.baseUrl)
             .map(res => res.json());
     }
 }
