@@ -13,7 +13,7 @@ export class NewsService{
 
     constructor(http:Http){
         this.http=http;
-        this.baseUrl = "http://www.uscannenbergmedia.com/arcio/ans/";
+        this.baseUrl = "https://usc-adapter.partner.nile.works/api/v1/url?url=https://usc-wp.partner.nile.works/";
     }
 
     getPosts(limit){
