@@ -11,21 +11,17 @@
   <ion-list>
      <ion-item *ngFor="let x of elem"> 
     <ion-item-sliding>
-      <ion-item >
+      <ion-item text-wrap>
       
            <!-- <ion-thumbnail item-left > 
            <img src = "x.promo_images[0].url">   
            <! <img src="https://s3-us-west-1.amazonaws.com/annenberg-media/wp-content/uploads/2017/07/Screen-Shot-2017-07-18-at-1.50.33-PM.png">  -->
            <!-- </ion-thumbnail>     --> 
 
-        <h2 text-wrap [innerHTML]="x.title"></h2>
+        <h2 [innerHTML]="x.title"></h2>
         <br>
         <div>
-        <ion-icon name="person"></ion-icon>
-               Author
-              <ion-note item-right>
-                {{x.credits[0].name}}
-              </ion-note>
+               By {{x.credits[0].name}}
         </div>      
             <br>
          <button ion-button full (click)="viewItem(x)">View</button>
