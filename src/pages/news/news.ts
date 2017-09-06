@@ -20,7 +20,7 @@ export class NewsPage {
   }
 
   ngOnInit(){
-      this.getPosts(5);
+      this.getPosts(10);
   }
 
       getPosts(limit){
