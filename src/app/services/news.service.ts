@@ -13,7 +13,7 @@ export class NewsService{
 
     constructor(http:Http){
         this.http=http;
-        this.baseUrl = "http://www.uscannenbergmedia.com/arcio/ans/";
+        this.baseUrl = "http://www.uscannenbergmedia.com/arcio/ans/?query=type:story+revision.published:true&size=10&sort=display_date:desc";
     }
 
     getPosts(){
